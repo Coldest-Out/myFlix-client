@@ -29678,7 +29678,7 @@ function LoginView(props) {
                     lineNumber: 25
                 },
                 __self: this,
-                children: "Submit"
+                children: "Log In"
             })
         ]
     }));
