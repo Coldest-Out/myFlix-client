@@ -39,7 +39,7 @@ export function LoginView(props) {
 											required
 											placeholder="Your password must be at least 8 characters" />
 									</Form.Group>
-									<Button style={{ marginTop: '1rem' }}
+									<Button style={{ marginTop: '1rem', color: 'white', background: 'black', borderColor: 'black' }}
 										variant="primary"
 										type="submit"
 										onClick={handleSubmit}>
