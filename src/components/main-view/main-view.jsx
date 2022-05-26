@@ -5,7 +5,7 @@ import { RegistrationView } from '../registration-view/registration-view';
 import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
-import { Row, Col, Button, Button } from 'react-bootstrap';
+import { Row, Col, Button } from 'react-bootstrap';
 import './main-view.scss'
 
 class MainView extends React.Component {

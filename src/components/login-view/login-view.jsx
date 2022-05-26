@@ -44,7 +44,7 @@ export function LoginView(props) {
 										variant="primary"
 										type="submit"
 										onClick={handleSubmit}>
-										Submit
+										Login
 									</Button>
 									<Button style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}
 										variant="primary"
