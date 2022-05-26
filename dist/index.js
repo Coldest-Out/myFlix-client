@@ -25552,10 +25552,12 @@ MovieCard.propTypes = {
         Title: _propTypesDefault.default.string.isRequired,
         Description: _propTypesDefault.default.string.isRequired,
         Genre: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
+            Name: _propTypesDefault.default.string,
+            Description: _propTypesDefault.default.string
         }),
         Director: _propTypesDefault.default.shape({
-            Name: _propTypesDefault.default.string
+            Name: _propTypesDefault.default.string,
+            Bio: _propTypesDefault.default.string
         })
     }).isRequired,
     onMovieClick: _propTypesDefault.default.func.isRequired
