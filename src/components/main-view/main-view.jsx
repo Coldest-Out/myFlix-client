@@ -6,6 +6,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
 import { Row, Col, Button, Button } from 'react-bootstrap';
+import './main-view.scss'
 
 class MainView extends React.Component {
 
@@ -83,7 +84,7 @@ class MainView extends React.Component {
 					: (
 						<Row className="justify-content-md-center">
 							{movies.map(movie => (
-								<Col md={3}>
+								<Col md={3} id="background">
 									<MovieCard key={movie._id} movie={movie} onMovieClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
 								</Col>
 							))}

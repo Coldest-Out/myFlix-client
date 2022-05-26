@@ -1,6 +1,4 @@
-.my-flix {
-  color: steelblue;
-}
+
 #movie-card {
   height: 600px;
   margin-top: 25px;
@@ -40,8 +38,10 @@
 #app-container {
   background-color: rgb(109, 0, 0);
 }
-
 #background {
   background-color: rgb(109, 0, 0);
 }
-/*# sourceMappingURL=index.HASH_REF_f9c317f8caa67093.css.map */
+.my-flix {
+  color: steelblue;
+}
+/*# sourceMappingURL=index.1d334ea1.css.map */

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, CardGroup, Card } from 'react-bootstrap';
+import './login-view.scss';
 
 export function LoginView(props) {
 	const [username, setUsername] = useState('');
@@ -45,7 +46,7 @@ export function LoginView(props) {
 										onClick={handleSubmit}>
 										Submit
 									</Button>
-									<Button style={{ color: 'white', background: 'red', marginLeft: '1rem', marginTop: '1rem', borderColor: 'red' }}
+									<Button style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}
 										variant="primary"
 										type="submit"
 										onClick={handleSubmit}>
