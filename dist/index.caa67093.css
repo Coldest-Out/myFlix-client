@@ -40,6 +40,37 @@
 #app-container {
   background-color: rgb(109, 0, 0);
 }
+#movie__img {
+  max-height: 600px;
+  max-width: 100%;
+}
+
+.movie__title {
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.movie__header {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.movie__text {
+  font-size: 16px;
+}
+
+#back-button {
+  font-size: 18px;
+  background-color: rgb(109, 0, 0);
+  color: rgb(255, 255, 255);
+  border: none;
+  text-decoration: none;
+  margin-top: 8px;
+  padding: 6px;
+  border-radius: 20%;
+  justify-content: center;
+  padding-left: "2rem";
+}
 
 #background {
   background-color: rgb(109, 0, 0);

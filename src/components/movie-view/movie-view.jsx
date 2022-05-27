@@ -1,36 +1,36 @@
 import React from 'react';
+// import axios from 'axios';
 import PropTypes from 'prop-types';
-import { Card, Col, Container, Row, Button } from "react-bootstrap";
+import { Button } from 'react-bootstrap';
+import './movie-view.scss'
 
-class MovieView extends React.Component {
+export class MovieView extends React.Component {
 
 	render() {
 		const { movie, onBackClick } = this.props;
 
+
 		return (
-			<div className="movie-view">
+			<div className="movie-view" style={{ marginBottom: '1rem', marginTop: '1rem', marginRight: '1rem', marginLeft: '1rem' }}>
 				<div className="movie-poster">
-					<img src={movie.ImagePath} />
-				</div>
+					<img id="movie__img" src={movie.ImagePath} />
+				</div><br />
 				<div className="movie-title">
-					<span className="label">Title: </span>
-					<span className="value">{movie.Title}</span>
-				</div>
+					<span className="movie__title">{movie.Title}</span>
+				</div><br />
 				<div className="movie-description">
-					<span className="label">Description: </span>
-					<span className="value">{movie.Description}</span>
+					<span className="movie__header">Description: </span>
+					<span className="movie__text">{movie.Description}</span>
 				</div>
 				<div className="movie-genre">
-					<span className="label">Genre: </span>
-					<span className="value">{movie.Genre.Name}</span>
+					<span className="movie__header">Genre: </span>
+					<span className="movie__text">{movie.Genre.Name}</span>
 				</div>
 				<div className="movie-director">
-					<span className="label">Director: </span>
-					<span className="value">{movie.Director}</span>
+					<span className="movie__header">Director: </span>
+					<span className="movie__text">{movie.Director.Name}</span>
 				</div>
-				<button onClick={() => { onBackClick(null); }}>Back</button>
-				<button onClick={() => { onBackClick(null); }}>Add to Favorites</button>
-				<button onClick={() => { onBackClick(null); }}>Remove from Favorites</button>
+				<Button id="back-button" onClick={() => { onBackClick(null); }}>Back</Button>
 
 			</div>
 		);
@@ -52,5 +52,3 @@ MovieView.propTypes = {
 	}).isRequired,
 	onBackClick: PropTypes.func.isRequired
 };
-
-export default MovieView;
