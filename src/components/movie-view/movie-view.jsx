@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Card, Col, Container, Row, Button } from "react-bootstrap";
 
 class MovieView extends React.Component {
 
