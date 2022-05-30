@@ -10,7 +10,7 @@ export class MovieCard extends React.Component {
 
 		return (
 			<Card id="movie-card" style={{ marginBottom: '1rem', marginTop: '1rem', marginRight: '1rem', marginLeft: '1rem' }}>
-				<Card.Img id="movie-image" variant="top" src={movie.ImagePath} />
+				<Card.Img id="movie-image" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
 				<Card.Body>
 					<Card.Title id="movie-title">{movie.Title}</Card.Title>
 					<Button id="open-button" onClick={() => onMovieClick(movie)} variant="link">Open</Button>
