@@ -102,13 +102,36 @@ class MainView extends React.Component {
 				<Router>
 					<Row className="main-view justify-content-md-center">
 						<Route exact path="/" render={() => {
+							if (!user) return <Col>
+								<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+							</Col>
+							if (movies.length === 0) return <div className="main-view" />;
 							return movies.map(m => (
-								<Col id="background" md={3} key={m._id}>
+								<Col id="background" sm={6} md={4} lg={3} key={m._id} >
 									<MovieCard movie={m} />
 								</Col>
 							))
 						}} />
+
+						<Route path="/login" render={() => {
+							if (user) return <Redirect to="/" />
+							return <Col md={8}>
+								<LoginView />
+							</Col>
+						}} />
+
+						<Route path="/users" render={() => {
+							if (user) return <Redirect to="/" />
+							return <Col md={8}>
+								<RegistrationView />
+							</Col>
+						}} />
+
 						<Route path="/movies/:movieId" render={({ match, history }) => {
+							if (!user) return <Col>
+								<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+							</Col>
+							if (movies.length === 0) return <div className="main-view" />;
 							return <Col md={8}>
 								<MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
 							</Col>
