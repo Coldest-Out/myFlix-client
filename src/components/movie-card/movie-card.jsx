@@ -1,19 +1,36 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Button, Card } from 'react-bootstrap';
-import './movie-card.scss'
+import { Button, Card, Row } from 'react-bootstrap';
 
+import { Link } from "react-router-dom";
+
+import './movie-card.scss'
 
 export class MovieCard extends React.Component {
 	render() {
-		const { movie, onMovieClick } = this.props;
+		const { movie } = this.props;
 
 		return (
-			<Card id="movie-card" style={{ marginBottom: '1rem', marginTop: '1rem', marginRight: '1rem', marginLeft: '1rem' }}>
-				<Card.Img id="movie-image" variant="top" crossOrigin="anonymous" src={movie.ImagePath} />
+			<Card id="movie-card">
+				<Card.Img id="movie-image" variant="top" src={movie.ImagePath} />
 				<Card.Body>
-					<Card.Title id="movie-title">{movie.Title}</Card.Title>
-					<Button id="open-button" onClick={() => onMovieClick(movie)} variant="link">Open</Button>
+
+					<Card.Title id="card-title" >{movie.Title}</Card.Title>
+					<Row>
+						<Link to={`/movies/${movie._id}`}>
+							<Button id="open-button" variant="link">Open</Button>
+						</Link>
+					</Row>
+					<Row>
+						<Link to={`/directors/${movie.Director.Name}`}>
+							<Button id="open-button" variant="link">Director</Button>
+						</Link>
+					</Row>
+					<Row>
+						<Link to={`/genres/${movie.Genre.Name}`}>
+							<Button id="open-button" variant="link">Genre</Button>
+						</Link>
+					</Row>
 				</Card.Body>
 			</Card>
 		);
@@ -24,14 +41,16 @@ MovieCard.propTypes = {
 	movie: PropTypes.shape({
 		Title: PropTypes.string.isRequired,
 		Description: PropTypes.string.isRequired,
-		Genre: PropTypes.shape({
-			Name: PropTypes.string,
-			Description: PropTypes.string
-		}),
+		ImagePath: PropTypes.string.isRequired,
 		Director: PropTypes.shape({
-			Name: PropTypes.string,
-			Bio: PropTypes.string
+			Name: PropTypes.string.isRequired,
+			Bio: PropTypes.string.isRequired,
+			Birth: PropTypes.string.isRequired,
+			Death: PropTypes.string
 		}),
+		Genre: PropTypes.shape({
+			Name: PropTypes.string.isRequired,
+			Description: PropTypes.string.isRequired
+		})
 	}).isRequired,
-	onMovieClick: PropTypes.func.isRequired,
 };

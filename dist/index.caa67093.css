@@ -40,6 +40,10 @@
 #app-container {
   background-color: rgb(109, 0, 0);
 }
+
+#row-spacing {
+  margin-left: "1rem";
+}
 #movie__img {
   max-height: 600px;
   max-width: 100%;
@@ -70,5 +74,9 @@
   border-radius: 20%;
   justify-content: center;
   padding-left: "2rem";
+}
+
+#background {
+  background-color: rgb(109, 0, 0);
 }
 /*# sourceMappingURL=index.caa67093.css.map */
