@@ -31,11 +31,11 @@ class MainView extends React.Component {
 	}
 
 	/*When a movie is clicked, this function is invoked and updates the state of the `selectedMovie` *property to that movie*/
-	setSelectedMovie(movie) {
-		this.setState({
-			selectedMovie: movie
-		});
-	}
+	//	setSelectedMovie(movie) {
+	//		this.setState({
+	//			selectedMovie: movie
+	//		});
+	//	}
 
 	/* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
 	onLoggedIn(authData) {
@@ -57,11 +57,11 @@ class MainView extends React.Component {
 		});
 	}
 
-	onRegister(registered) {
-		this.setState({
-			registered
-		});
-	}
+	//	onRegister(registered) {
+	//		this.setState({
+	//			registered
+	//		});
+	//	}
 
 	getMovies(token) {
 		axios.get('https://cold-myflix-app.herokuapp.com/movies', {
@@ -120,7 +120,7 @@ class MainView extends React.Component {
 							</Col>
 						}} />
 
-						<Route path="/users" render={() => {
+						<Route path="/register" render={() => {
 							if (user) return <Redirect to="/" />
 							return <Col md={8}>
 								<RegistrationView />
