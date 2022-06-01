@@ -7,7 +7,7 @@ import './movie-view.scss'
 
 export class MovieView extends React.Component {
 
-	addToFavoriteList() {
+	addToFavoriteList(movieId) {
 		const currentUser = localStorage.getItem('user');
 		const token = localStorage.getItem('token');
 		axios.post(`https://cold-myflix-app.herokuapp.com/users/${currentUser}/movies/${movieId}`,

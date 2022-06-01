@@ -60,12 +60,9 @@ export function UpdateView(props) {
 					headers: { Authorization: `Bearer ${token}` }
 				})
 				.then(response => {
-					console.log('response.data');
 					console.log(response.data);
-					localStorage.setItem('user', response.data.Username);
-					setUser(response.data)
-					alert('Your account information has been changed!')
-					window.open("/profile", "_self");
+					alert('Profile was successfully updated.');
+					window.open('/users/:username', '_self');
 				})
 				.catch(error => {
 					console.error(error);

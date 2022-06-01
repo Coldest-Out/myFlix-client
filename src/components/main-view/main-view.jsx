@@ -10,6 +10,7 @@ import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { Redirect } from 'react-router-dom';
 import { NavbarView } from '../navbar/navbar';
+import { UpdateView } from '../profile-view/update-view';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './main-view.scss';
