@@ -40932,7 +40932,7 @@ var _reactBootstrap = require("react-bootstrap");
 var _bs = require("react-icons/bs");
 var _movieViewScss = require("./movie-view.scss");
 class MovieView extends _reactDefault.default.Component {
-    addToFavoriteList(movieId) {
+    addToFavoriteList() {
         const currentUser = localStorage.getItem('user');
         const token = localStorage.getItem('token');
         _axiosDefault.default.post(`https://cold-myflix-app.herokuapp.com/users/${currentUser}/movies/${movieId}`, {
@@ -85095,9 +85095,12 @@ function UpdateView(props) {
                     Authorization: `Bearer ${token}`
                 }
             }).then((response)=>{
+                console.log('response.data');
                 console.log(response.data);
-                alert('Profile was successfully updated.');
-                window.open('/users/:username', '_self');
+                localStorage.setItem('user', response.data.Username);
+                setUser(response.data);
+                alert('Your account information has been changed!');
+                window.open("/profile", "_self");
             }).catch((error)=>{
                 console.error(error);
                 alert('Unable to update profile.');
@@ -85109,20 +85112,20 @@ function UpdateView(props) {
         className: "mt-5",
         __source: {
             fileName: "src/components/profile-view/update-view.jsx",
-            lineNumber: 75
+            lineNumber: 78
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 76
+                    lineNumber: 79
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("h4", {
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 76
+                        lineNumber: 79
                     },
                     __self: this,
                     children: "Edit profile"
@@ -85131,7 +85134,7 @@ function UpdateView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 77
+                    lineNumber: 80
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -85140,13 +85143,13 @@ function UpdateView(props) {
                     lg: "6",
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 78
+                        lineNumber: 81
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                         __source: {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 79
+                            lineNumber: 82
                         },
                         __self: this,
                         children: [
@@ -85154,14 +85157,14 @@ function UpdateView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 80
+                                    lineNumber: 83
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 81
+                                            lineNumber: 84
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -85175,14 +85178,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 82
+                                            lineNumber: 85
                                         },
                                         __self: this
                                     }),
                                     values.usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 84
+                                            lineNumber: 87
                                         },
                                         __self: this,
                                         children: values.usernameErr
@@ -85193,14 +85196,14 @@ function UpdateView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 86
+                                    lineNumber: 89
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 87
+                                            lineNumber: 90
                                         },
                                         __self: this,
                                         children: "Password:"
@@ -85214,14 +85217,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 88
+                                            lineNumber: 91
                                         },
                                         __self: this
                                     }),
                                     values.passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 90
+                                            lineNumber: 93
                                         },
                                         __self: this,
                                         children: values.passwordErr
@@ -85232,14 +85235,14 @@ function UpdateView(props) {
                                 controlId: "formEmail",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 95
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 93
+                                            lineNumber: 96
                                         },
                                         __self: this,
                                         children: "Email:"
@@ -85253,14 +85256,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 94
+                                            lineNumber: 97
                                         },
                                         __self: this
                                     }),
                                     values.emailErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 96
+                                            lineNumber: 99
                                         },
                                         __self: this,
                                         children: values.emailErr
@@ -85271,14 +85274,14 @@ function UpdateView(props) {
                                 controlId: "formBirthday",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 98
+                                    lineNumber: 101
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 99
+                                            lineNumber: 102
                                         },
                                         __self: this,
                                         children: "Birthdate:"
@@ -85291,7 +85294,7 @@ function UpdateView(props) {
                                         placeholder: "YYYY-MM-DD",
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 100
+                                            lineNumber: 103
                                         },
                                         __self: this
                                     })
@@ -85302,7 +85305,7 @@ function UpdateView(props) {
                                 className: "mt-3",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 102
+                                    lineNumber: 105
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -85312,7 +85315,7 @@ function UpdateView(props) {
                                     onClick: handleSubmit,
                                     __source: {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 103
+                                        lineNumber: 106
                                     },
                                     __self: this,
                                     children: "Edit profile"
@@ -85657,13 +85660,13 @@ function NavbarView() {
                 variant: "light",
                 __source: {
                     fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 26
+                    lineNumber: 27
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
                     __source: {
                         fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 27
+                        lineNumber: 28
                     },
                     __self: this,
                     children: [
@@ -85671,16 +85674,16 @@ function NavbarView() {
                             href: "#home",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 28
+                                lineNumber: 29
                             },
                             __self: this,
-                            children: "MyFlix"
+                            children: "MyFlix-App"
                         }),
                         /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
                             "aria-controls": "responsive-navbar-nav",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 29
+                                lineNumber: 30
                             },
                             __self: this
                         }),
@@ -85688,7 +85691,7 @@ function NavbarView() {
                             id: "responsive-navbar-nav",
                             __source: {
                                 fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 30
+                                lineNumber: 31
                             },
                             __self: this,
                             children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
@@ -85697,7 +85700,7 @@ function NavbarView() {
                                         className: "mx-auto",
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 32
+                                            lineNumber: 33
                                         },
                                         __self: this,
                                         children: [
@@ -85705,7 +85708,7 @@ function NavbarView() {
                                                 href: "/",
                                                 __source: {
                                                     fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 33
+                                                    lineNumber: 34
                                                 },
                                                 __self: this,
                                                 children: "Movies"
@@ -85714,7 +85717,7 @@ function NavbarView() {
                                                 href: `/users/${user}`,
                                                 __source: {
                                                     fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 34
+                                                    lineNumber: 35
                                                 },
                                                 __self: this,
                                                 children: "Profile"
@@ -85725,7 +85728,7 @@ function NavbarView() {
                                         className: "mx-auto",
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 36
+                                            lineNumber: 37
                                         },
                                         __self: this,
                                         children: [
@@ -85733,16 +85736,16 @@ function NavbarView() {
                                                 onClick: onLoggedOut,
                                                 __source: {
                                                     fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 37
+                                                    lineNumber: 38
                                                 },
                                                 __self: this,
-                                                children: "Sign-out"
+                                                children: "Sign-Out"
                                             }),
                                             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
                                                 disabled: true,
                                                 __source: {
                                                     fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 38
+                                                    lineNumber: 39
                                                 },
                                                 __self: this,
                                                 children: user
