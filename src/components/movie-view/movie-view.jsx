@@ -3,6 +3,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Button } from 'react-bootstrap';
 import './movie-view.scss'
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Link, BrowserRouter } from 'react-router-dom';
 
 export class MovieView extends React.Component {
 

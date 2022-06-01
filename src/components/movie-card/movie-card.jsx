@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { Button, Card, Row } from 'react-bootstrap';
 
 import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 import './movie-card.scss'
 
@@ -12,7 +14,7 @@ export class MovieCard extends React.Component {
 
 		return (
 			<Card id="movie-card">
-				<Card.Img id="movie-image" variant="top" src={movie.ImagePath} />
+				<Card.Img crossOrigin="anonymous" id="movie-image" variant="top" src={movie.ImagePath} />
 				<Card.Body>
 
 					<Card.Title id="card-title" >{movie.Title}</Card.Title>
