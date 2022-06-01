@@ -19,7 +19,7 @@ export class GenreView extends React.Component {
 					<Col className="label">Description: </Col>
 					<Col className="value">{genre.Description}</Col>
 				</Row>
-				<Button className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
+				<Button id="open-button" className="d-block mt-3" onClick={() => { onBackClick(null); }} variant="warning">Back</Button>
 			</Container>
 		)
 	}

@@ -90,19 +90,19 @@ a:active {
 #background {
   background-color: rgb(109, 0, 0);
 }
+#profile-form {
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 30%;
+}
 
-/* #logout-button {
-	font-size: 18px;
-	background-color: $button-color;
-	color: $white-color;
-	border: none;
-	text-decoration: none;
-	margin-top: 8px;
-	padding: 6px;
-	border-radius: 20%;
-	justify-content: center;
-	padding-left: '2rem';
-} */
+#profile-form #movie-card {
+  color: rgb(109, 0, 0);
+}
+
+.label {
+  font-weight: bold;
+}
 .label {
   font-weight: bold;
 }

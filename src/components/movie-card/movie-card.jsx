@@ -9,6 +9,22 @@ import { Link } from 'react-router-dom';
 import './movie-card.scss'
 
 export class MovieCard extends React.Component {
+
+	addToFavoriteList(movieId) {
+		const currentUser = localStorage.getItem('user');
+		const token = localStorage.getItem('token');
+		axios.put(`https://cold-myflix-app.herokuapp.com/users/${currentUser}/movies/${movieId}`,
+			{},
+			{
+				headers: { Authorization: `Bearer ${token}` }
+			})
+			.then((response) => {
+				console.log(response.data)
+				alert(`The movie was successfully add to your list.`)
+			}).
+			catch(error => console.error(error))
+	}
+
 	render() {
 		const { movie } = this.props;
 

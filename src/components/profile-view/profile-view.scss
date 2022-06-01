@@ -1,0 +1,16 @@
+$button-color: rgb(109, 0, 0);
+$white-color: rgb(255, 255, 255);
+
+#profile-form {
+	background-color: $white-color;
+	position: absolute;
+	top: 30%;
+}
+
+#profile-form #movie-card {
+	color: rgb(109, 0, 0);
+}
+
+.label {
+	font-weight: bold;
+}
