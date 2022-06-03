@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 import { Button, Col, Container, Form, Row } from 'react-bootstrap';
@@ -61,10 +62,10 @@ export function UpdateView(props) {
 				.then(response => {
 					console.log(response.data);
 					this.setState({
-						Username: response.data.Username,
-						Password: response.data.Password,
-						Email: response.data.Email,
-						Birthday: new Date(response.data.Birthday).getFullYear() + "-" + dateFormat + "-" + new Date(response.data.Birthday).getDate()
+						Username: response.data.setUsername,
+						Password: response.data.setPassword,
+						Email: response.data.setEmail,
+						Birthday: response.data.setBirthday
 					});
 					alert('Profile was successfully updated.');
 					window.open('/users/:username', '_self');
