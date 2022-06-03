@@ -84805,7 +84805,6 @@ function ProfileView(props) {
                 __self: this
             }),
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
-                id: "open-button",
                 className: "d-block mt-5",
                 variant: "warning",
                 onClick: handleDelete,
@@ -85297,6 +85296,7 @@ function UpdateView(props) {
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
+                                    id: "open-button",
                                     variant: "warning",
                                     type: "submit",
                                     onClick: handleSubmit,

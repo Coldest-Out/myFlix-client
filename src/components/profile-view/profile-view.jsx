@@ -71,7 +71,7 @@ export function ProfileView(props) {
 					token={token} />
 			</Row>
 			<UpdateView user={user} />
-			<Button id="open-button" className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
+			<Button className="d-block mt-5" variant="warning" onClick={handleDelete}>Delete profile</Button>
 		</Container>
 	)
 }
