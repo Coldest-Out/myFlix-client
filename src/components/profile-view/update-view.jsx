@@ -59,16 +59,20 @@ export function UpdateView(props) {
 				{
 					headers: { Authorization: `Bearer ${token}` }
 				})
-				.then(response => {
+				.then((response) => {
 					console.log(response.data);
-					this.setState({
-						Username: response.data.setUsername,
-						Password: response.data.setPassword,
-						Email: response.data.setEmail,
-						Birthday: response.data.setBirthday
-					});
-					alert('Profile was successfully updated.');
-					window.open('/users/:username', '_self');
+					// this.setState({
+					// 	Username: response.data.setUsername,
+					// 	Password: response.data.setPassword,
+					// 	Email: response.data.setEmail,
+					// 	Birthday: response.data.setBirthday
+					// });
+					setUsername(response.data.Username);
+					setPassword(response.data.Password);
+					setEmail(response.data.Email);
+					setBirthday(response.data.Birthday);
+					alert("Profile was successfully updated.");
+					window.open("/users/:username", "_self");
 				})
 				.catch(error => {
 					console.error(error);

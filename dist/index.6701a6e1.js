@@ -85081,14 +85081,18 @@ function UpdateView(props) {
                 }
             }).then((response)=>{
                 console.log(response.data);
-                this.setState({
-                    Username: response.data.setUsername,
-                    Password: response.data.setPassword,
-                    Email: response.data.setEmail,
-                    Birthday: response.data.setBirthday
-                });
-                alert('Profile was successfully updated.');
-                window.open('/users/:username', '_self');
+                // this.setState({
+                // 	Username: response.data.setUsername,
+                // 	Password: response.data.setPassword,
+                // 	Email: response.data.setEmail,
+                // 	Birthday: response.data.setBirthday
+                // });
+                setUsername(response.data.Username);
+                setPassword(response.data.Password);
+                setEmail(response.data.Email);
+                setBirthday(response.data.Birthday);
+                alert("Profile was successfully updated.");
+                window.open("/users/:username", "_self");
             }).catch((error)=>{
                 console.error(error);
                 alert('Unable to update profile.');
@@ -85100,20 +85104,20 @@ function UpdateView(props) {
         className: "mt-5",
         __source: {
             fileName: "src/components/profile-view/update-view.jsx",
-            lineNumber: 81
+            lineNumber: 85
         },
         __self: this,
         children: [
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 82
+                    lineNumber: 86
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx("h4", {
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 82
+                        lineNumber: 86
                     },
                     __self: this,
                     children: "Edit profile"
@@ -85122,7 +85126,7 @@ function UpdateView(props) {
             /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Row, {
                 __source: {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 83
+                    lineNumber: 87
                 },
                 __self: this,
                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Col, {
@@ -85131,13 +85135,13 @@ function UpdateView(props) {
                     lg: "6",
                     __source: {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 84
+                        lineNumber: 88
                     },
                     __self: this,
                     children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Form, {
                         __source: {
                             fileName: "src/components/profile-view/update-view.jsx",
-                            lineNumber: 85
+                            lineNumber: 89
                         },
                         __self: this,
                         children: [
@@ -85145,14 +85149,14 @@ function UpdateView(props) {
                                 controlId: "formUsername",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 86
+                                    lineNumber: 90
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 87
+                                            lineNumber: 91
                                         },
                                         __self: this,
                                         children: "Username:"
@@ -85166,14 +85170,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 88
+                                            lineNumber: 92
                                         },
                                         __self: this
                                     }),
                                     values.usernameErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 90
+                                            lineNumber: 94
                                         },
                                         __self: this,
                                         children: values.usernameErr
@@ -85184,14 +85188,14 @@ function UpdateView(props) {
                                 controlId: "formPassword",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 92
+                                    lineNumber: 96
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 93
+                                            lineNumber: 97
                                         },
                                         __self: this,
                                         children: "Password:"
@@ -85205,14 +85209,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 94
+                                            lineNumber: 98
                                         },
                                         __self: this
                                     }),
                                     values.passwordErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 96
+                                            lineNumber: 100
                                         },
                                         __self: this,
                                         children: values.passwordErr
@@ -85223,14 +85227,14 @@ function UpdateView(props) {
                                 controlId: "formEmail",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 98
+                                    lineNumber: 102
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 99
+                                            lineNumber: 103
                                         },
                                         __self: this,
                                         children: "Email:"
@@ -85244,14 +85248,14 @@ function UpdateView(props) {
                                         required: true,
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 100
+                                            lineNumber: 104
                                         },
                                         __self: this
                                     }),
                                     values.emailErr && /*#__PURE__*/ _jsxRuntime.jsx("p", {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 102
+                                            lineNumber: 106
                                         },
                                         __self: this,
                                         children: values.emailErr
@@ -85262,14 +85266,14 @@ function UpdateView(props) {
                                 controlId: "formBirthday",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 104
+                                    lineNumber: 108
                                 },
                                 __self: this,
                                 children: [
                                     /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Form.Label, {
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 105
+                                            lineNumber: 109
                                         },
                                         __self: this,
                                         children: "Birthday:"
@@ -85282,7 +85286,7 @@ function UpdateView(props) {
                                         placeholder: "YYYY-MM-DD",
                                         __source: {
                                             fileName: "src/components/profile-view/update-view.jsx",
-                                            lineNumber: 106
+                                            lineNumber: 110
                                         },
                                         __self: this
                                     })
@@ -85293,7 +85297,7 @@ function UpdateView(props) {
                                 className: "mt-3",
                                 __source: {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 108
+                                    lineNumber: 112
                                 },
                                 __self: this,
                                 children: /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Button, {
@@ -85303,7 +85307,7 @@ function UpdateView(props) {
                                     onClick: handleSubmit,
                                     __source: {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 109
+                                        lineNumber: 113
                                     },
                                     __self: this,
                                     children: "Edit profile"
