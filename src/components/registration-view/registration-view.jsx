@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom'
 
 export function RegistrationView(props) {
-	const [name, setName] = useState('');
 	const [username, setUsername] = useState('');
 	const [password, setPassword] = useState('');
 	const [email, setEmail] = useState('');
@@ -84,16 +83,6 @@ export function RegistrationView(props) {
 											onChange={e => setUsername(e.target.value)}
 											placeholder="Enter a username" />
 										{values.usernameErr && <p>{values.usernameErr}</p>}
-									</Form.Group>
-
-									<Form.Group controlId="formName" className="reg-form-inputs">
-										<Form.Label>Name:</Form.Label>
-										<Form.Control
-											type="text"
-											value={name}
-											onChange={e => setName(e.target.value)}
-											placeholder="Enter your name" />
-										{values.nameErr && <p>{values.nameErr}</p>}
 									</Form.Group>
 
 									<Form.Group controlId="formPassword" className="reg-form-inputs">

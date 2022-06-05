@@ -97,7 +97,7 @@ export function UpdateView(props) {
 						</Form.Group>
 						<Form.Group controlId="formEmail">
 							<Form.Label>Email:</Form.Label>
-							<Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="your@mail.com" required />
+							<Form.Control type="text" value={email} onChange={e => setEmail(e.target.value)} placeholder="example@preferredemail.com" required />
 							{/* display validation error */}
 							{values.emailErr && <p>{values.emailErr}</p>}
 						</Form.Group>
