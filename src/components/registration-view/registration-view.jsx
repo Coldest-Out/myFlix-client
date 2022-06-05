@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, CardGroup, Card, Link } from 'react-bootstrap';
 import axios from 'axios';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 export function RegistrationView(props) {
 	const [name, setName] = useState('');
@@ -83,7 +83,7 @@ export function RegistrationView(props) {
 											value={username}
 											onChange={e => setUsername(e.target.value)}
 											placeholder="Enter a username" />
-										(values.usernameErr && <p>{values.usernameErr}</p>)
+										{values.usernameErr && <p>{values.usernameErr}</p>}
 									</Form.Group>
 
 									<Form.Group controlId="formName" className="reg-form-inputs">
@@ -93,7 +93,7 @@ export function RegistrationView(props) {
 											value={name}
 											onChange={e => setName(e.target.value)}
 											placeholder="Enter your name" />
-										(values.nameErr && <p>{values.nameErr}</p>)
+										{values.nameErr && <p>{values.nameErr}</p>}
 									</Form.Group>
 
 									<Form.Group controlId="formPassword" className="reg-form-inputs">
@@ -102,7 +102,7 @@ export function RegistrationView(props) {
 											type="password"
 											value={password}
 											onChange={e => setPassword(e.target.value)} />
-										(values.passwordErr && <p>{values.passwordErr}</p>)
+										{values.passwordErr && <p>{values.passwordErr}</p>}
 									</Form.Group>
 
 									<Form.Group controlId="Email" className="reg-form-inputs">
@@ -111,7 +111,7 @@ export function RegistrationView(props) {
 											type="email"
 											value={email}
 											onChange={e => setEmail(e.target.value)} />
-										(values.emailErr && <p>{values.emailErr}</p>)
+										{values.emailErr && <p>{values.emailErr}</p>}
 									</Form.Group>
 
 									<Form.Group controlId="updateBirthday" className="reg-form-inputs">

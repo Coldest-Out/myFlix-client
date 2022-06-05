@@ -61,22 +61,18 @@ export function UpdateView(props) {
 				})
 				.then((response) => {
 					console.log(response.data);
-					// this.setState({
-					// 	Username: response.data.setUsername,
-					// 	Password: response.data.setPassword,
-					// 	Email: response.data.setEmail,
-					// 	Birthday: response.data.setBirthday
-					// });
-					setUsername(response.data.Username);
+					// since the username response is coming back as the previous. We are going to use the username state we have from the input to update localStorage and the url.
 					setPassword(response.data.Password);
 					setEmail(response.data.Email);
 					setBirthday(response.data.Birthday);
-					alert("Profile was successfully updated.");
-					window.open("/users/:username", "_self");
+					//   localStorage.removeItem("user");
+					localStorage.setItem("user", username);
+					//   alert("Profile was successfully updated.");
+					window.open(`/users/${username}`, "_self");
 				})
-				.catch(error => {
+				.catch((error) => {
 					console.error(error);
-					alert('Unable to update profile.');
+					alert("Unable to update profile.");
 				});
 		}
 	};
