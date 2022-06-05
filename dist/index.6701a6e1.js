@@ -85641,114 +85641,110 @@ function NavbarView() {
         if (localStorage.getItem("token")) return localStorage.getItem("token");
         else return false;
     };
-    return(/*#__PURE__*/ _jsxRuntime.jsx(_jsxRuntime.Fragment, {
-        children: [
-            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
-                collapseOnSelect: true,
-                expand: "lg",
-                bg: "alert",
-                variant: "light",
-                __source: {
-                    fileName: "src/components/navbar/navbar.jsx",
-                    lineNumber: 27
-                },
-                __self: this,
-                children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+    return(/*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar, {
+        collapseOnSelect: true,
+        expand: "lg",
+        bg: "alert",
+        variant: "light",
+        __source: {
+            fileName: "src/components/navbar/navbar.jsx",
+            lineNumber: 27
+        },
+        __self: this,
+        children: /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Container, {
+            __source: {
+                fileName: "src/components/navbar/navbar.jsx",
+                lineNumber: 28
+            },
+            __self: this,
+            children: [
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
+                    href: "#home",
                     __source: {
                         fileName: "src/components/navbar/navbar.jsx",
-                        lineNumber: 28
+                        lineNumber: 29
                     },
                     __self: this,
-                    children: [
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Brand, {
-                            href: "#home",
-                            __source: {
-                                fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 29
-                            },
-                            __self: this,
-                            children: "MyFlix-App"
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
-                            "aria-controls": "responsive-navbar-nav",
-                            __source: {
-                                fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 30
-                            },
-                            __self: this
-                        }),
-                        /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
-                            id: "responsive-navbar-nav",
-                            __source: {
-                                fileName: "src/components/navbar/navbar.jsx",
-                                lineNumber: 31
-                            },
-                            __self: this,
-                            children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                    children: "MyFlix-App"
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Toggle, {
+                    "aria-controls": "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 30
+                    },
+                    __self: this
+                }),
+                /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Navbar.Collapse, {
+                    id: "responsive-navbar-nav",
+                    __source: {
+                        fileName: "src/components/navbar/navbar.jsx",
+                        lineNumber: 31
+                    },
+                    __self: this,
+                    children: isAuth() && /*#__PURE__*/ _jsxRuntime.jsxs(_jsxRuntime.Fragment, {
+                        children: [
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
+                                className: "mx-auto",
+                                __source: {
+                                    fileName: "src/components/navbar/navbar.jsx",
+                                    lineNumber: 33
+                                },
+                                __self: this,
                                 children: [
-                                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
-                                        className: "mx-auto",
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        href: "/",
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 33
+                                            lineNumber: 34
                                         },
                                         __self: this,
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                                href: "/",
-                                                __source: {
-                                                    fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 34
-                                                },
-                                                __self: this,
-                                                children: "Movies"
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                                href: `/users/${user}`,
-                                                __source: {
-                                                    fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 35
-                                                },
-                                                __self: this,
-                                                children: "Profile"
-                                            })
-                                        ]
+                                        children: "Movies"
                                     }),
-                                    /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
-                                        className: "mx-auto",
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        href: `/users/${user}`,
                                         __source: {
                                             fileName: "src/components/navbar/navbar.jsx",
-                                            lineNumber: 37
+                                            lineNumber: 35
                                         },
                                         __self: this,
-                                        children: [
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                                onClick: onLoggedOut,
-                                                __source: {
-                                                    fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 38
-                                                },
-                                                __self: this,
-                                                children: "Sign-Out"
-                                            }),
-                                            /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
-                                                disabled: true,
-                                                __source: {
-                                                    fileName: "src/components/navbar/navbar.jsx",
-                                                    lineNumber: 39
-                                                },
-                                                __self: this,
-                                                children: user
-                                            })
-                                        ]
+                                        children: "Profile"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ _jsxRuntime.jsxs(_reactBootstrap.Nav, {
+                                className: "mx-auto",
+                                __source: {
+                                    fileName: "src/components/navbar/navbar.jsx",
+                                    lineNumber: 37
+                                },
+                                __self: this,
+                                children: [
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        onClick: onLoggedOut,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 38
+                                        },
+                                        __self: this,
+                                        children: "Sign-Out"
+                                    }, user._id),
+                                    /*#__PURE__*/ _jsxRuntime.jsx(_reactBootstrap.Nav.Link, {
+                                        disabled: true,
+                                        __source: {
+                                            fileName: "src/components/navbar/navbar.jsx",
+                                            lineNumber: 39
+                                        },
+                                        __self: this,
+                                        children: user
                                     }, user._id)
                                 ]
                             })
-                        })
-                    ]
+                        ]
+                    })
                 })
-            })
-        ]
+            ]
+        })
     }));
 }
 _c = NavbarView;
