@@ -92,7 +92,7 @@ class MainView extends React.Component {
 						</Col>
 						if (movies.length === 0) return <div className="main-view" />;
 						return movies.map(m => (
-							<Col id="background" sm={6} md={4} lg={3} key={m._id} >
+							<Col id="background" sm={6} md={4} lg={3} key={m._id}>
 								<MovieCard movie={m} />
 							</Col>
 						))

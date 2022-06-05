@@ -34,7 +34,7 @@ export function NavbarView() {
 								<Nav.Link href="/">Movies</Nav.Link>
 								<Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
 							</Nav>
-								<Nav className="mx-auto">
+								<Nav key={user._id} className="mx-auto">
 									<Nav.Link onClick={onLoggedOut}>Sign-Out</Nav.Link>
 									<Nav.Link disabled>{user}</Nav.Link>
 								</Nav></>

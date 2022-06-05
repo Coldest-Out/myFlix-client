@@ -85,16 +85,10 @@ export function LoginView(props) {
 										onClick={handleSubmit}>
 										Login
 									</Button>
-									{/* <Button style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}
-                                        variant="primary"
-                                        type="submit"
-                                        onClick={handleSubmit}>
-                                        Register
-                                        
-                                    </Button> */}
 									<Button style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}>
 										<BrowserRouter>
-											<Link to={`/register`}>Register</Link>
+											<Link to={`/register`} >Register
+											</Link>
 										</BrowserRouter>
 									</Button>
 								</Form>
