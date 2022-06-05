@@ -4,7 +4,6 @@ import axios from 'axios';
 import './login-view.scss';
 import { Link, BrowserRouter } from 'react-router-dom';
 import { RegistrationView } from '../registration-view/registration-view';
-import { BrowserRouter } from 'react-router-dom';
 
 export function LoginView(props) {
 	const [username, setUsername] = useState('');
@@ -85,7 +84,10 @@ export function LoginView(props) {
 										onClick={handleSubmit}>
 										Login
 									</Button>
-									<Button style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}>
+									<Button
+										variant="secondary"
+										type="button"
+										style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}>
 										<BrowserRouter>
 											<Link to={`/register`}>Register</Link>
 										</BrowserRouter>
