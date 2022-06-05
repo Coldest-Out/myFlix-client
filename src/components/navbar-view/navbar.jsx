@@ -28,8 +28,8 @@ export function NavbarView() {
 					<Nav className="me-auto">
 						{isAuth() &&
 							<Fragment>
-								<Nav.Link href="/">Home</Nav.Link>
-								<Nav.Link href={`/users/${user}`}>Profil</Nav.Link>
+								<Nav.Link href="/">Movies</Nav.Link>
+								<Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
 								<Nav.Link onClick={onLoggedOut}>Sign-out</Nav.Link>
 							</Fragment>
 						}
