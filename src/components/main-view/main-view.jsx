@@ -1,42 +1,160 @@
 import React from 'react';
+import axios from 'axios';
+
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from '../movie-view/movie-view';
+import { LoginView } from '../login-view/login-view';
+import { RegistrationView } from '../registration-view/registration-view';
+import { ProfileView } from '../profile-view/profile-view';
+import { DirectorView } from '../director-view/director-view';
+import { GenreView } from '../genre-view/genre-view';
+import { Redirect } from 'react-router-dom';
+import { NavbarView } from '../navbar/navbar';
+import { UpdateView } from '../profile-view/update-view';
+
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import './main-view.scss';
+import { Col, Row } from 'react-bootstrap';
 
 class MainView extends React.Component {
 
 	constructor() {
 		super();
 		this.state = {
-			movies: [
-				{ _id: 1, Title: 'Interstellar', Description: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.", Genre: 'Sci-fi', Director: 'Christopher Nolan', ImagePath: './components/movie-jpeg/interstellar.jpeg' },
-				{ _id: 2, Title: 'The Dark Knight', Description: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, Batman must accept one of the greatest psychological and physical tests of his ability to fight injustice.', Genre: 'Action', Director: 'Christopher Nolan', ImagePath: './components/movie-jpeg/thedarkknight.jpeg' },
-				{ _id: 3, Title: 'Spirited Away', Description: "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.", Genre: 'Animation', Director: 'Hayao Miyazaki', ImagePath: '../movie-jpeg/spiritedaway.jpeg' }
-			],
-			selectedMovie: null
+			movies: [],
+			user: null
 		};
 	}
 
-	setSelectedMovie(newSelectedMovie) {
+	componentDidMount() {
+		let accessToken = localStorage.getItem('token');
+		if (accessToken !== null) {
+			this.setState({
+				user: localStorage.getItem('user')
+			});
+			this.getMovies(accessToken);
+		}
+	}
+
+	/* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
+	onLoggedIn(authData) {
+		console.log(authData);
 		this.setState({
-			selectedMovie: newSelectedMovie
+			user: authData.user.Username
+		});
+
+		localStorage.setItem('token', authData.token);
+		localStorage.setItem('user', authData.user.Username);
+		this.getMovies(authData.token);
+	}
+
+	onLoggedOut() {
+		localStorage.removeItem('token');
+		localStorage.removeItem('user');
+		this.setState({
+			user: null
 		});
 	}
 
+	getMovies(token) {
+		axios.get('https://cold-myflix-app.herokuapp.com/movies', {
+			headers: { Authorization: `Bearer ${token}` }
+		})
+			.then(response => {
+				//Assign the result to the state
+				this.setState({
+					movies: response.data
+				});
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
+	}
+
 	render() {
-		const { movies, selectedMovie } = this.state;
+		const { movies, user } = this.state;
 
-
-		if (movies.length === 0) return <div className="main-view">The list is empty!</div>;
+		//if (!user) return <Row>
+		//<Col>
+		//<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+		//</Col>
+		//</Row>
+		//if (movies.length === 0) return <div className="main-view" />;
 
 		return (
-			<div className="main-view">
-				{selectedMovie
-					? <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
-					: movies.map(movie => (
-						<MovieCard key={movie._id} movie={movie} onMovieClick={(movie) => { this.setSelectedMovie(movie) }} />
-					))
-				}
-			</div>
+
+			<Router>
+				<NavbarView user={user} />
+				<Row className="main-view justify-content-md-center">
+					<Route exact path="/" render={() => {
+						if (!user) return <Col>
+							<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+						</Col>
+						if (movies.length === 0) return <div className="main-view" />;
+						return movies.map(m => (
+							<Col id="background" sm={6} md={4} lg={3} key={m._id}>
+								<MovieCard movie={m} />
+							</Col>
+						))
+					}} />
+
+					<Route path="/login" render={() => {
+						if (user) return <Redirect to="/" />
+						return <Col md={8}>
+							<LoginView />
+						</Col>
+					}} />
+
+					<Route path="/register" render={() => {
+						if (user) return <Redirect to="/" />
+						return <Col md={8}>
+							<RegistrationView />
+						</Col>
+					}} />
+
+					<Route path="/movies/:movieId" render={({ match, history }) => {
+						if (!user) return <Col>
+							<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+						</Col>
+						if (movies.length === 0) return <div className="main-view" />;
+						return <Col md={8}>
+							<MovieView movie={movies.find(m => m._id === match.params.movieId)} onBackClick={() => history.goBack()} />
+						</Col>
+					}} />
+
+					<Route path="/directors/:name" render={({ match, history }) => {
+						if (!user) return <Col>
+							<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+						</Col>
+						if (movies.length === 0) return <div className="main-view" />;
+						return <Col md={8}>
+							<DirectorView director={movies.find(m => m.Director.Name === match.params.name).Director} onBackClick={() => history.goBack()} />
+						</Col>
+					}} />
+
+					<Route path="/genres/:name" render={({ match, history }) => {
+						if (!user) return <Col>
+							<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+						</Col>
+						if (movies.length === 0) return <div className="main-view" />;
+						return <Col md={8}>
+							<GenreView genre={movies.find(m => m.Genre.Name === match.params.name).Genre} onBackClick={() => history.goBack()} />
+						</Col>
+					}} />
+
+					<Route path="/users/:username" render={({ match, history }) => {
+						if (!user) return <Col>
+							<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
+						</Col>
+						if (movies.length === 0) return <div className="main-view" />;
+						if (!user) return <Redirect to="/" />
+						return <Col md={8}>
+							<ProfileView movies={movies} user={user === match.params.username} onBackClick={() => history.goBack()} />
+						</Col>
+					}} />
+
+				</Row>
+			</Router>
 		);
 	}
 }
