@@ -85,9 +85,13 @@ export function LoginView(props) {
 										Login
 									</Button>
 									<Button
-										variant="secondary"
-										type="button"
-										style={{ color: 'white', background: 'maroon', marginLeft: '1rem', marginTop: '1rem', borderColor: 'maroon' }}>
+										style={{
+											color: "white",
+											background: "maroon",
+											marginLeft: "1rem",
+											marginTop: "1rem",
+											borderColor: "maroon",
+										}}>
 										<BrowserRouter>
 											<Link to={`/register`}>Register</Link>
 										</BrowserRouter>

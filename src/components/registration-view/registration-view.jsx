@@ -10,7 +10,6 @@ export function RegistrationView(props) {
 	const [email, setEmail] = useState('');
 	const [birthday, setBirthday] = useState('');
 	const [values, setValues] = useState({
-		nameErr: '',
 		usernameErr: '',
 		passwordErr: '',
 		emailErr: '',
@@ -47,7 +46,7 @@ export function RegistrationView(props) {
 		e.preventDefault();
 		const isReq = validate();
 		if (isReq) {
-			axios.post('https://cold-myflix-app.herokuapp.com/users', {
+			axios.post('https://cold-myflix-app.herokuapp.com/register', {
 				Username: username,
 				Password: password,
 				Email: email,
@@ -107,14 +106,14 @@ export function RegistrationView(props) {
 										<Form.Label>Birthday</Form.Label>
 										<Form.Control
 											type="date"
-											name="birthday"
+											value={birthday}
 											onChange={e => setBirthday(e.target.value)} />
 									</Form.Group>
-									<Button variant="primary" type="submit"
+									<Button id="open-button" variant="primary" type="submit"
 										onClick={handleSubmit}>Register
 									</Button>
 									<p></p>
-									<p>Already Registered? <Link to={'/'}>Login</Link> here</p>
+									<p>Already Registered? <Link id="open-button" to={'/'}>Login</Link> here</p>
 								</Form>
 							</Card.Body>
 						</Card>
