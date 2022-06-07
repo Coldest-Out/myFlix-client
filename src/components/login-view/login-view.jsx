@@ -92,9 +92,7 @@ export function LoginView(props) {
 											marginTop: "1rem",
 											borderColor: "maroon",
 										}}>
-										<BrowserRouter>
-											<Link to={`/register`}>Register</Link>
-										</BrowserRouter>
+										<Link to={"/register"}>Register</Link>
 									</Button>
 								</Form>
 							</Card.Body>

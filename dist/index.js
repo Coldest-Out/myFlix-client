@@ -84113,21 +84113,14 @@ function LoginView(props) {
                                                 lineNumber: 87
                                             },
                                             __self: this,
-                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.BrowserRouter, {
+                                            children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
+                                                to: "/register",
                                                 __source: {
                                                     fileName: "src/components/login-view/login-view.jsx",
                                                     lineNumber: 95
                                                 },
                                                 __self: this,
-                                                children: /*#__PURE__*/ _jsxRuntime.jsx(_reactRouterDom.Link, {
-                                                    to: `/register`,
-                                                    __source: {
-                                                        fileName: "src/components/login-view/login-view.jsx",
-                                                        lineNumber: 96
-                                                    },
-                                                    __self: this,
-                                                    children: "Register"
-                                                })
+                                                children: "Register"
                                             })
                                         })
                                     ]
