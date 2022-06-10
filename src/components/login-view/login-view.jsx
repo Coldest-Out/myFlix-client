@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { Form, Button, Container, Row, Col, CardGroup, Card } from 'react-bootstrap';
 import axios from 'axios';
 import './login-view.scss';
-import { Link, BrowserRouter } from 'react-router-dom';
-import { RegistrationView } from '../registration-view/registration-view';
+import { Link } from 'react-router-dom';
 
 export function LoginView(props) {
 	const [username, setUsername] = useState('');
