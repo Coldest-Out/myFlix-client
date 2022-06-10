@@ -21,10 +21,11 @@ export function NavbarView() {
 	};
 
 	return (
-		<Navbar bg="light" expand="lg" className="mb-5">
+		<Navbar bg="light" expand="lg" className="mb-5 navbar">
 			<Container>
+				<Navbar.Brand>myFlix-Application</Navbar.Brand>
 				<Navbar.Toggle aria-controls="navbar-nav" />
-				<Navbar.Collapse>
+				<Navbar.Collapse className="justify-content-end">
 					<Nav className="me-auto">
 						{isAuth() &&
 							<Fragment>

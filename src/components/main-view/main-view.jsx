@@ -9,8 +9,7 @@ import { ProfileView } from '../profile-view/profile-view';
 import { DirectorView } from '../director-view/director-view';
 import { GenreView } from '../genre-view/genre-view';
 import { Redirect } from 'react-router-dom';
-import { NavbarView } from '../navbar/navbar';
-import { UpdateView } from '../profile-view/update-view';
+import { NavbarView } from '../navbar-view/navbar';
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import './main-view.scss';
@@ -73,13 +72,6 @@ class MainView extends React.Component {
 
 	render() {
 		const { movies, user } = this.state;
-
-		//if (!user) return <Row>
-		//<Col>
-		//<LoginView onLoggedIn={user => this.onLoggedIn(user)} />
-		//</Col>
-		//</Row>
-		//if (movies.length === 0) return <div className="main-view" />;
 
 		return (
 

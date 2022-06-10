@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Button, Card, Row } from 'react-bootstrap';
 
 import { Link } from "react-router-dom";
-import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import './movie-card.scss'
 
