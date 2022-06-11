@@ -148,7 +148,7 @@ class MainView extends React.Component {
 }
 
 let mapStateToProps = state => {
-	return { movies: state.movies }
+	return { movies: state.movies, user: StorageEvent.user }
 }
 
 //Commented out because of console error "Invalid value of type object for mergeProps argument when connecting component MainView"
