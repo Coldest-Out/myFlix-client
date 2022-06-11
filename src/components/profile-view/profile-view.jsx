@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import axios from 'axios';
+import { connect } from 'react-redux';
+//Will impliment code sometime in the future
+//import { remFavMovie } from '../../actions/actions';
+//import { addFavMovie } from '../../actions/actions';
 
 import { Button, Col, Container, Row } from 'react-bootstrap';
 
@@ -75,3 +79,11 @@ export function ProfileView(props) {
 		</Container>
 	)
 }
+
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
+}
+
+export default connect(mapStateToProps)(ProfileView);
