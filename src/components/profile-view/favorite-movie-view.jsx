@@ -20,6 +20,8 @@ export function FavoriteMoviesView(props) {
 			headers: { Authorization: `Bearer ${token}` }
 		})
 			.then(() => {
+				this.setState({ FavoriteMovies: res?.data?.FavoriteMovies });
+				this.props.remFavMovie(res?.data)
 				alert(`The movie was successfully deleted.`)
 				window.open('/users/:username', '_self');
 			}).
