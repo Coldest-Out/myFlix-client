@@ -13,6 +13,7 @@ export function RegistrationView(props) {
 		usernameErr: '',
 		passwordErr: '',
 		emailErr: '',
+		birthdayErr: '',
 	});
 
 	// validate user inputs
