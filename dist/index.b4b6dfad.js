@@ -80872,6 +80872,13 @@ function UpdateView(props) {
             });
             isReq = false;
         }
+        if (!birthday) {
+            setValues({
+                ...values,
+                birthdayErr: "Date of Birth required"
+            });
+            isReq = false;
+        }
         return isReq;
     };
     const handleSubmit = (e)=>{
@@ -80913,12 +80920,12 @@ function UpdateView(props) {
                     children: "Edit profile"
                 }, void 0, false, {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 82,
+                    lineNumber: 86,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/update-view.jsx",
-                lineNumber: 82,
+                lineNumber: 86,
                 columnNumber: 4
             }, this),
             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Row), {
@@ -80935,7 +80942,7 @@ function UpdateView(props) {
                                         children: "Username:"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 87,
+                                        lineNumber: 91,
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -80946,20 +80953,20 @@ function UpdateView(props) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 88,
+                                        lineNumber: 92,
                                         columnNumber: 8
                                     }, this),
                                     values.usernameErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                         children: values.usernameErr
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 90,
+                                        lineNumber: 94,
                                         columnNumber: 31
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 86,
+                                lineNumber: 90,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -80969,7 +80976,7 @@ function UpdateView(props) {
                                         children: "Password:"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 93,
+                                        lineNumber: 97,
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -80980,20 +80987,20 @@ function UpdateView(props) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 94,
+                                        lineNumber: 98,
                                         columnNumber: 8
                                     }, this),
                                     values.passwordErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                         children: values.passwordErr
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 96,
+                                        lineNumber: 100,
                                         columnNumber: 31
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 92,
+                                lineNumber: 96,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -81003,7 +81010,7 @@ function UpdateView(props) {
                                         children: "Email:"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 99,
+                                        lineNumber: 103,
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -81014,20 +81021,20 @@ function UpdateView(props) {
                                         required: true
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 100,
+                                        lineNumber: 104,
                                         columnNumber: 8
                                     }, this),
                                     values.emailErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
                                         children: values.emailErr
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 102,
+                                        lineNumber: 106,
                                         columnNumber: 28
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 98,
+                                lineNumber: 102,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -81037,7 +81044,7 @@ function UpdateView(props) {
                                         children: "Birthday:"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 105,
+                                        lineNumber: 109,
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
@@ -81047,13 +81054,20 @@ function UpdateView(props) {
                                         placeholder: "YYYY-MM-DD"
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
-                                        lineNumber: 106,
+                                        lineNumber: 110,
                                         columnNumber: 8
+                                    }, this),
+                                    values.birthdayErr && /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)("p", {
+                                        children: values.birthdayErr
+                                    }, void 0, false, {
+                                        fileName: "src/components/profile-view/update-view.jsx",
+                                        lineNumber: 111,
+                                        columnNumber: 31
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 104,
+                                lineNumber: 108,
                                 columnNumber: 7
                             }, this),
                             /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Group, {
@@ -81067,34 +81081,34 @@ function UpdateView(props) {
                                     children: "Edit profile"
                                 }, void 0, false, {
                                     fileName: "src/components/profile-view/update-view.jsx",
-                                    lineNumber: 109,
+                                    lineNumber: 114,
                                     columnNumber: 8
                                 }, this)
                             }, void 0, false, {
                                 fileName: "src/components/profile-view/update-view.jsx",
-                                lineNumber: 108,
+                                lineNumber: 113,
                                 columnNumber: 7
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "src/components/profile-view/update-view.jsx",
-                        lineNumber: 85,
+                        lineNumber: 89,
                         columnNumber: 6
                     }, this)
                 }, void 0, false, {
                     fileName: "src/components/profile-view/update-view.jsx",
-                    lineNumber: 84,
+                    lineNumber: 88,
                     columnNumber: 5
                 }, this)
             }, void 0, false, {
                 fileName: "src/components/profile-view/update-view.jsx",
-                lineNumber: 83,
+                lineNumber: 87,
                 columnNumber: 4
             }, this)
         ]
     }, void 0, true, {
         fileName: "src/components/profile-view/update-view.jsx",
-        lineNumber: 81,
+        lineNumber: 85,
         columnNumber: 3
     }, this);
 }

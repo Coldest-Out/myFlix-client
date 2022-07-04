@@ -42,6 +42,10 @@ export function UpdateView(props) {
 			setValues({ ...values, emailErr: 'Enter valid email' });
 			isReq = false;
 		}
+		if (!birthday) {
+			setValues({ ...values, birthdayErr: 'Date of Birth required' });
+			isReq = false;
+		}
 		return isReq;
 	}
 
@@ -104,6 +108,7 @@ export function UpdateView(props) {
 						<Form.Group controlId="formBirthday">
 							<Form.Label>Birthday:</Form.Label>
 							<Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="YYYY-MM-DD" />
+							{values.birthdayErr && <p>{values.birthdayErr}</p>}
 						</Form.Group>
 						<Form.Group controlId="formBirthday" className="mt-3">
 							<Button id="open-button" variant="warning" type="submit" onClick={handleSubmit}>Edit profile</Button>
