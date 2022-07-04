@@ -40,6 +40,12 @@ export function RegistrationView(props) {
 			setValues({ ...values, emailErr: 'Enter valid email' });
 			isReq = false;
 		}
+		if (!birthday) {
+			setValues({ ...values, birthdayErr: 'Date of Birth required' });
+			isReq = false;
+		} else if (birthday.value = 0) {
+			setValues({ ...values, birthdayErr: 'Enter valid Date of Birth' });
+		}
 		return isReq;
 	}
 
@@ -109,6 +115,7 @@ export function RegistrationView(props) {
 											type="date"
 											value={birthday}
 											onChange={e => setBirthday(e.target.value)} />
+										{values.birthdayErr && <p>{values.birthdayErr}</p>}
 									</Form.Group>
 									<Button id="open-button" variant="primary" type="submit"
 										onClick={handleSubmit}>Register
