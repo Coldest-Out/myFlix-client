@@ -49,24 +49,10 @@ export function NavbarView() {
 	);
 }
 
-let mapStateToProps = state => {
-	return { user: state.user }
+const mapStateToProps = (state) => {
+	return {
+		user: state.user
+	}
 }
 
 export default connect(mapStateToProps, {})(NavbarView);
-/* <Nav className="me-auto">
-						{isAuth() &&
-							<Fragment>
-								<Nav.Link href="/">Movies</Nav.Link>
-								<Nav.Link href={`/users/${user}`}>Profile</Nav.Link>
-								<Nav.Link onClick={onLoggedOut}>Sign-out</Nav.Link>
-							</Fragment>
-						}
-						{!isAuth() &&
-							<Fragment>
-								<Nav.Link href={'/login'}>Sign-in</Nav.Link>
-								<Nav.Link href={'/register'}>Sign-up</Nav.Link>
-							</Fragment>
-						}
-					</Nav>
-					*/
