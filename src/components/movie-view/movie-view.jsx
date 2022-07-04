@@ -28,7 +28,7 @@ export class MovieView extends React.Component {
 		return (
 			<div className="movie-view" style={{ marginBottom: '1rem', marginTop: '1rem', marginRight: '1rem', marginLeft: '1rem' }}>
 				<div className="movie-poster">
-					<img id="movie__img" crossorigin="anonymous" src={movie.ImagePath} />
+					<img id="movie__img" crossOrigin="anonymous" src={movie.ImagePath} />
 				</div><br />
 				<div className="movie-title">
 					<span className="movie__title">{movie.Title}</span>

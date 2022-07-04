@@ -38,7 +38,7 @@ export function FavoriteMoviesView(props) {
 						<Col xs={10} sm={8} md={6} lg={4} key={movie._id}>
 							<Card id="movie-card">
 								<Link to={`/movies/${movie._id}`}>
-									<Card.Img crossorigin="anonymous" variant="top" src={movie.ImagePath} />
+									<Card.Img crossOrigin="anonymous" variant="top" src={movie.ImagePath} />
 								</Link>
 								<Card.Body>
 									<Card.Title>{movie.Title}</Card.Title>
