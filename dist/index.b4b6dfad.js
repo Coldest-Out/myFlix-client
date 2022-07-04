@@ -80143,7 +80143,10 @@ function RegistrationView(props) {
                 birthdayErr: "Date of Birth required"
             });
             isReq = false;
-        } else birthday.value = 0;
+        } else if (birthday.input !== null) setValues({
+            ...values,
+            birthdayErr: "Enter valid Date of Birth"
+        });
         return isReq;
     };
     const handleSubmit = (e)=>{
