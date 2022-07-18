@@ -80048,8 +80048,7 @@ LoginView.propTypes = {
 };
 const mapStateToProps = (state)=>{
     return {
-        user: state.user,
-        onLoggedIn: undefined.state
+        user: state.user
     };
 };
 exports.default = (0, _reactRedux.connect)(mapStateToProps, {

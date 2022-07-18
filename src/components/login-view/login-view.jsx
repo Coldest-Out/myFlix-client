@@ -118,7 +118,6 @@ LoginView.propTypes = {
 const mapStateToProps = (state) => {
 	return {
 		user: state.user,
-		onLoggedIn: this.state
 	};
 }
 
