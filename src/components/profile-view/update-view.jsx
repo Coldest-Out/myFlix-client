@@ -107,7 +107,7 @@ export function UpdateView(props) {
 						</Form.Group>
 						<Form.Group controlId="formBirthday">
 							<Form.Label>Birthday:</Form.Label>
-							<Form.Control type="text" value={birthday} onChange={e => setBirthday(e.target.value)} placeholder="YYYY-MM-DD" />
+							<Form.Control type="date" value={birthday} onChange={e => setBirthday(e.target.value)} />
 							{values.birthdayErr && <p>{values.birthdayErr}</p>}
 						</Form.Group>
 						<Form.Group controlId="formBirthday" className="mt-3">

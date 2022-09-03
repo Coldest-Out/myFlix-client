@@ -41,7 +41,7 @@ export function RegistrationView(props) {
 			isReq = false;
 		}
 		if (!birthday) {
-			setValues({ ...values, birthdayErr: 'Date of Birth required' });
+			setValues({ ...values, birthdayErr: 'Please enter a birthday before todays date.' });
 			isReq = false;
 		}
 		return isReq;
@@ -65,7 +65,7 @@ export function RegistrationView(props) {
 				})
 				.catch(e => {
 					console.log('Error');
-					alert('Unable to register');
+					alert('Unable to register. Please make sure all requirements are met: Username must be at least 5 characters long. Password must be at least 2 characters long. Email must be valid (containing @ symbol). Must enter a birthdate before todays date.');
 				});
 		}
 	};

@@ -80139,7 +80139,7 @@ function RegistrationView(props) {
         if (!birthday) {
             setValues({
                 ...values,
-                birthdayErr: "Date of Birth required"
+                birthdayErr: "Please enter a birthday before todays date."
             });
             isReq = false;
         }
@@ -80160,7 +80160,7 @@ function RegistrationView(props) {
             window.open("/", "_self");
         }).catch((e)=>{
             console.log("Error");
-            alert("Unable to register");
+            alert("Unable to register. Please make sure all requirements are met: Username must be at least 5 characters long. Password must be at least 2 characters long. Email must be valid (containing @ symbol). Must enter a birthdate before todays date.");
         });
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Container), {
@@ -81047,10 +81047,9 @@ function UpdateView(props) {
                                         columnNumber: 8
                                     }, this),
                                     /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _reactBootstrap.Form).Control, {
-                                        type: "text",
+                                        type: "date",
                                         value: birthday,
-                                        onChange: (e)=>setBirthday(e.target.value),
-                                        placeholder: "YYYY-MM-DD"
+                                        onChange: (e)=>setBirthday(e.target.value)
                                     }, void 0, false, {
                                         fileName: "src/components/profile-view/update-view.jsx",
                                         lineNumber: 110,
