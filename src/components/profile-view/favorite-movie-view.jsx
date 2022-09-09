@@ -22,9 +22,9 @@ export function FavoriteMoviesView(props) {
 			.then(() => {
 				//this.setState({ FavoriteMovies: res?.data?.FavoriteMovies });
 				//this.props.remFavMovie(res?.data)
-				//window.location.reload();
-				alert(`The movie was successfully deleted.`)
-				window.open('/users/:username', '_self');
+				window.location.reload();
+				//alert(`The movie was successfully deleted.`)
+				//window.open('/users/:username', '_self');
 			}).
 			catch(error => console.error(error))
 	}
