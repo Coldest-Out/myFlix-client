@@ -18,6 +18,7 @@
     "url": "https://github.com/Coldest-Out/myFlix-client/issues"
   },
   "dependencies": {
+    "homepage": "https://github.com/Coldest-Out/myFlix-client#readme",
     "axios": "^0.27.2",
     "jsonwebtoken": "^8.5.1",
     "parcel": "^2.6.2",
