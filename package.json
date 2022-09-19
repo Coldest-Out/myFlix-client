@@ -2,10 +2,10 @@
   "name": "myflix-client",
   "version": "1.0.0",
   "description": "",
-  "source": "src/index.html",
+  "source": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "parcel src/index.html",
+    "start": "parcel src/index.js",
     "build": "parcel build src/index.html --public-url /"
   },
   "repository": {
