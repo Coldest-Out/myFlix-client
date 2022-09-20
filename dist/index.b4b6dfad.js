@@ -80681,10 +80681,10 @@ function FavoriteMoviesView(props) {
         }).then(()=>{
             //this.setState({ FavoriteMovies: res?.data?.FavoriteMovies });
             //this.props.remFavMovie(res?.data)
-            //window.location.reload();
+            window.location.reload();
             alert(`The movie was successfully deleted.`);
-            //window.open('/users/:username', '_self');
-            window.open("/users/" + currentUser, "_self");
+        //window.open('/users/:username', '_self');
+        //window.open('/users/' + currentUser, '_self');
         }).catch((error)=>console.error(error));
     };
     return /*#__PURE__*/ (0, _jsxDevRuntime.jsxDEV)((0, _react.Fragment), {
